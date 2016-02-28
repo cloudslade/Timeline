@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class LoginSignUpChoiceViewController: UIViewController {
-    
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toSignup" {
             let ourLoginChoiceViewController = segue.destinationViewController as! LoginSignUpViewController

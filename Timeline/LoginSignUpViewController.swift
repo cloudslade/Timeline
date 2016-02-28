@@ -35,7 +35,7 @@ class LoginSignUpViewController: UIViewController {
     }
     var mode: ViewMode = .Signup
     
-    enum ViewMode {
+    enum ViewMode: Int {
         case Login
         case Signup
     }
