@@ -10,5 +10,14 @@ import Foundation
 import UIKit
 
 class ProfileViewController: UIViewController {
+    var user: User?
+    var userPosts: [Post] = []
     
+    override func viewDidLoad() {
+        print(user?.userName)
+    }
+    
+    func updateBasedOnUser(user: User) {
+        
+    }
 }

@@ -13,6 +13,8 @@
 		01E3FC2F1BE92C7600187536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E3FC2D1BE92C7600187536 /* LaunchScreen.storyboard */; };
 		01E3FC3A1BE92C7700187536 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3FC391BE92C7700187536 /* TimelineTests.swift */; };
 		01E3FC451BE92C7700187536 /* TimelineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3FC441BE92C7700187536 /* TimelineUITests.swift */; };
+		E6375BCF1C83A7FB00350D72 /* ProfileHeaderCollectionResuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6375BCE1C83A7FB00350D72 /* ProfileHeaderCollectionResuableView.swift */; };
+		E6375BD51C83BCBD00350D72 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6375BD41C83BCBD00350D72 /* ImageCollectionViewCell.swift */; };
 		E660D0DB1C7CFDA900B8225B /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D0DA1C7CFDA900B8225B /* TimelineTableViewController.swift */; };
 		E660D0DD1C7CFFD200B8225B /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D0DC1C7CFFD200B8225B /* PostDetailTableViewController.swift */; };
 		E660D0DF1C7D03FA00B8225B /* UserSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D0DE1C7D03FA00B8225B /* UserSearchTableViewController.swift */; };
@@ -60,6 +62,8 @@
 		01E3FC401BE92C7700187536 /* TimelineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E3FC441BE92C7700187536 /* TimelineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineUITests.swift; sourceTree = "<group>"; };
 		01E3FC461BE92C7700187536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6375BCE1C83A7FB00350D72 /* ProfileHeaderCollectionResuableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionResuableView.swift; sourceTree = "<group>"; };
+		E6375BD41C83BCBD00350D72 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E660D0DA1C7CFDA900B8225B /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		E660D0DC1C7CFFD200B8225B /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		E660D0DE1C7D03FA00B8225B /* UserSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				E660D0E01C7D05B000B8225B /* ProfileViewController.swift */,
 				E660D0DE1C7D03FA00B8225B /* UserSearchTableViewController.swift */,
 				E6E6C76A1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift */,
+				E6375BCE1C83A7FB00350D72 /* ProfileHeaderCollectionResuableView.swift */,
+				E6375BD41C83BCBD00350D72 /* ImageCollectionViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -332,10 +338,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E660D0E91C7D086F00B8225B /* LoginSignUpViewController.swift in Sources */,
+				E6375BCF1C83A7FB00350D72 /* ProfileHeaderCollectionResuableView.swift in Sources */,
 				E660D0EF1C7D0D4700B8225B /* Post.swift in Sources */,
 				E660D0E51C7D070C00B8225B /* AddPhotoTableViewController.swift in Sources */,
 				E6E6C76B1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift in Sources */,
 				E660D0DB1C7CFDA900B8225B /* TimelineTableViewController.swift in Sources */,
+				E6375BD51C83BCBD00350D72 /* ImageCollectionViewCell.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
 				E660D1041C7D9BE900B8225B /* ImageController.swift in Sources */,
 				E660D0F31C7D196000B8225B /* UserController.swift in Sources */,

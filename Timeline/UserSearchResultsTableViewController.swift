@@ -23,4 +23,10 @@ class UserSearchResultsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userResultsDataSource.count
     }
+    
+    // We must add a prepare for segue function that will take us from the searchResultsTableViewController to the ProfileViewController. This is because the ViewController changes when we start using search and we must therefore eaccount for the new viewCointroller.
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        self.presentingViewController?.performSegueWithIdentifier("toProfileView", sender: cell)
+    }
 }

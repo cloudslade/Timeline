@@ -60,7 +60,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bNS-rf-VWy" kind="show" id="acs-GE-rWD"/>
+                                    <segue destination="bNS-rf-VWy" kind="show" identifier="toProfileView" id="acs-GE-rWD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,7 +94,7 @@
         <!--User Search Results Table View Controller-->
         <scene sceneID="qDF-sL-ZXD">
             <objects>
-                <tableViewController storyboardIdentifier="SearchResults" id="gno-Dp-Zp7" customClass="UserSearchResultsTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UserSearchResultsTableViewController" id="gno-Dp-Zp7" customClass="UserSearchResultsTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TIO-vz-i7z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,13 +374,95 @@
                     <view key="view" contentMode="scaleToFill" id="bPx-2h-lft">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mRx-3O-pED">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="78r-Tg-YRV">
+                                    <size key="itemSize" width="153" height="135"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="pEb-iP-gJl" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="153" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="153" height="135"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iEH-CJ-C5e">
+                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="135"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iEH-CJ-C5e" firstAttribute="leading" secondItem="pEb-iP-gJl" secondAttribute="leading" id="6bj-qw-5mi"/>
+                                            <constraint firstAttribute="trailing" secondItem="iEH-CJ-C5e" secondAttribute="trailing" id="K7F-qk-HzJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="iEH-CJ-C5e" secondAttribute="bottom" id="mRe-EY-I2U"/>
+                                            <constraint firstItem="iEH-CJ-C5e" firstAttribute="top" secondItem="pEb-iP-gJl" secondAttribute="top" id="qBY-44-Afv"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="iEH-CJ-C5e" id="BQ4-dn-8wv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCollectionReusableView" id="Jjz-zj-E9h" customClass="ProfileHeaderCollectionResuableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="199" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5hl-IL-NCE">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL8-mS-0rO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co2-KU-jfT">
+                                                    <rect key="frame" x="200" y="0.0" width="200" height="50"/>
+                                                    <state key="normal" title="HomePage"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuC-X7-WVn">
+                                                    <rect key="frame" x="400" y="0.0" width="200" height="50"/>
+                                                    <state key="normal" title="Follow"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5hl-IL-NCE" firstAttribute="top" secondItem="Jjz-zj-E9h" secondAttribute="top" id="8LY-FX-YJV"/>
+                                        <constraint firstItem="5hl-IL-NCE" firstAttribute="leading" secondItem="Jjz-zj-E9h" secondAttribute="leading" id="GXv-2e-7qi"/>
+                                        <constraint firstAttribute="trailing" secondItem="5hl-IL-NCE" secondAttribute="trailing" id="j8P-KF-CCm"/>
+                                        <constraint firstAttribute="bottom" secondItem="5hl-IL-NCE" secondAttribute="bottom" id="kca-J5-8tH"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="fL8-mS-0rO" id="rfc-7a-eVX"/>
+                                        <outlet property="followButton" destination="QuC-X7-WVn" id="PLt-t6-Onj"/>
+                                        <outlet property="homepageButton" destination="co2-KU-jfT" id="knI-ci-DE4"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="bNS-rf-VWy" id="GOk-7m-8ux"/>
+                                    <outlet property="delegate" destination="bNS-rf-VWy" id="40S-1N-Dsc"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mRx-3O-pED" firstAttribute="top" secondItem="cji-nC-v0e" secondAttribute="bottom" id="H7h-W8-JzX"/>
+                            <constraint firstItem="GXN-Xw-9Bt" firstAttribute="top" secondItem="mRx-3O-pED" secondAttribute="bottom" id="fa5-F1-BjO"/>
+                            <constraint firstAttribute="trailing" secondItem="mRx-3O-pED" secondAttribute="trailing" id="naw-9d-JTA"/>
+                            <constraint firstItem="mRx-3O-pED" firstAttribute="leading" secondItem="bPx-2h-lft" secondAttribute="leading" id="o7h-lp-Ypj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gau-gk-nPV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76S-IR-jPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="1720"/>
+            <point key="canvasLocation" x="863" y="1827"/>
         </scene>
         <!--Photos-->
         <scene sceneID="6aW-wh-2Mq">
@@ -458,8 +540,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MdM-DF-n2v"/>
         <segue reference="acs-GE-rWD"/>
+        <segue reference="MdM-DF-n2v"/>
         <segue reference="YpV-wl-LpL"/>
     </inferredMetricsTieBreakers>
 </document>

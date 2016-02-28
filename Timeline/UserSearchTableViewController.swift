@@ -45,6 +45,22 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
         setUpSearchController()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toProfileView" {
+            guard let cell = sender as? UITableViewCell else { return }
+            let profileViewController = segue.destinationViewController as! ProfileViewController
+            // We need to check somehow to see if the segue was accessed through userSearchTableViewController or the UserSearchResultsTableViewController.
+                // The solution code says we can accomplish this by checking if the indexPath Optional exists for the UserSearchTableViewController.
+            if let indexPath = self.tableView.indexPathForCell(cell) {
+                let user = usersDataSource[indexPath.row]
+                profileViewController.user = user
+            } else if let indexPath = (searchController.searchResultsController as? UserSearchResultsTableViewController)?.tableView.indexPathForCell(cell) {
+                let user = (searchController.searchResultsController as! UserSearchResultsTableViewController).userResultsDataSource[indexPath.row]
+                profileViewController.user = user
+            }
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func selectedIndexChanged(sender: UISegmentedControl) {
         updateViewBasedOnMode()
@@ -76,7 +92,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
     }
     
     func setUpSearchController() {
-        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserSearchResultsTableViewController")
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserSearchResultsTableViewController") // This identifier is the storyBoard ID, not the class.
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
