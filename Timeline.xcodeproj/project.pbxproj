@@ -29,6 +29,7 @@
 		E660D0F31C7D196000B8225B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D0F21C7D196000B8225B /* UserController.swift */; };
 		E660D1021C7D8F0200B8225B /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D1011C7D8F0200B8225B /* PostController.swift */; };
 		E660D1041C7D9BE900B8225B /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660D1031C7D9BE900B8225B /* ImageController.swift */; };
+		E6D368121C841BAE004883FE /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D368111C841BAE004883FE /* PostTableViewCell.swift */; };
 		E6E6C76B1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6C76A1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		E660D0F21C7D196000B8225B /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E660D1011C7D8F0200B8225B /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		E660D1031C7D9BE900B8225B /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		E6D368111C841BAE004883FE /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		E6E6C76A1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E660D0DA1C7CFDA900B8225B /* TimelineTableViewController.swift */,
+				E6D368111C841BAE004883FE /* PostTableViewCell.swift */,
 				E660D0DC1C7CFFD200B8225B /* PostDetailTableViewController.swift */,
 				E660D0E61C7D07F100B8225B /* LoginSignUpChoiceViewController.swift */,
 				E660D0E81C7D086F00B8225B /* LoginSignUpViewController.swift */,
@@ -342,6 +345,7 @@
 				E660D0EF1C7D0D4700B8225B /* Post.swift in Sources */,
 				E660D0E51C7D070C00B8225B /* AddPhotoTableViewController.swift in Sources */,
 				E6E6C76B1C82C3EC00E944A7 /* UserSearchResultsTableViewController.swift in Sources */,
+				E6D368121C841BAE004883FE /* PostTableViewCell.swift in Sources */,
 				E660D0DB1C7CFDA900B8225B /* TimelineTableViewController.swift in Sources */,
 				E6375BD51C83BCBD00350D72 /* ImageCollectionViewCell.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,

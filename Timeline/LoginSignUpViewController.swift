@@ -16,20 +16,16 @@ class LoginSignUpViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var websiteURLTextField: UITextField!
     @IBOutlet weak var actionButton: UIButton!
+    var user: User?
     var fieldsAreValid: Bool {
         get {
-            if mode == ViewMode.Login {
-                if userNameTextField.text!.isEmpty || emailTextField.text != "" || passwordTextField.text != "" {
-                    return true
-                } else {
-                    return false
-                }
-            } else {
-                if userNameTextField.text != "" || emailTextField.text != "" || passwordTextField.text != "" || bioTextField.text != "" || websiteURLTextField.text != "" {
-                    return true
-                } else {
-                    return false
-                }
+            switch mode {
+            case .Login:
+                return !(emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
+            case .Signup:
+                return !(userNameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
+            case .Edit:
+                return !(userNameTextField.text!.isEmpty)
             }
         }
     }
@@ -38,6 +34,7 @@ class LoginSignUpViewController: UIViewController {
     enum ViewMode: Int {
         case Login
         case Signup
+        case Edit
     }
     
     @IBAction func actionButtonTapped(sender: UIButton) {
@@ -61,6 +58,14 @@ class LoginSignUpViewController: UIViewController {
                     }
                 })
                 return
+            case .Edit:
+                UserController.updateUser(self.user!, userName: self.userNameTextField.text!, password: self.passwordTextField.text!, bio: self.bioTextField.text, url: self.websiteURLTextField.text, completion: { (success, user) -> Void in
+                    if success {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentAlertAfterFailedAuthentication("Unable to update User", message: "Please try again another time.")
+                    }
+                })
             }
         } else {
             presentAlertAfterFailedAuthentication("Missing Information", message: "Please check your input and try again")
@@ -82,6 +87,8 @@ class LoginSignUpViewController: UIViewController {
             actionButton.setTitle("Login", forState: UIControlState.Normal)
         case .Signup:
             actionButton.setTitle("Signup", forState: UIControlState.Normal)
+        case .Edit:
+            actionButton.setTitle("Update", forState: .Normal)
         }
     }
     
@@ -89,4 +96,15 @@ class LoginSignUpViewController: UIViewController {
         updateViewBasedOnMode()
     }
     
+    func updateWithUser(user: User) {
+        self.user = user
+        mode = .Edit
+    }
+    
 }
+
+
+
+
+
+

@@ -14,9 +14,21 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     var user: User?
     var userPosts: [Post] = []
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var editBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         print(user?.userName)
+        if self.user == nil {
+            self.user = UserController.sharedUserController.currentUser
+            editBarButtonItem.enabled = true
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //        UserController.userForIdentifier(user!.identifier!) { (user) -> Void in
+        //            self.user = user
+        //            self.updateBasedOnUser()
+        //        }
     }
     
     func updateBasedOnUser() {
@@ -81,4 +93,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             })
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditProfile" {
+            let destinationViewController = segue.destinationViewController as! LoginSignUpViewController
+            destinationViewController.updateWithUser(user!)
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
