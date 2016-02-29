@@ -384,7 +384,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="pEb-iP-gJl" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="pEb-iP-gJl" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="153" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -459,6 +459,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gau-gk-nPV"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mRx-3O-pED" id="6aL-Ws-Gbi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76S-IR-jPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
